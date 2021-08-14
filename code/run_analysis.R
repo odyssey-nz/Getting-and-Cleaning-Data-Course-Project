@@ -1,5 +1,5 @@
 ## Title: "Import, Merge, and Tidy Data for Analysis"
-## Date: 11/08/2021
+## Date: 15/08/2021
 ## Author: Josh Neale
 
 library(dplyr)
@@ -132,7 +132,7 @@ all_data <-     all_data %>%
 # 4. Extract the measurements on the mean and standard deviation for each measurement
 final <- all_data[grep("(mean|std)[(][)]", all_data$variable),]
 # Measurements are extracted where the feature description includes
-# and exact match for "mean()" or "std()"
+# an exact match for "mean()" or "std()"
 final <- as_tibble(final)
 
 
@@ -145,3 +145,6 @@ final_summary <-        final %>%
 
 # 6. Output Summary Data
 write.table(final_summary, "./output/summary.csv", row.names = FALSE, sep = ",")
+
+# Code below can be used to read back in the output data
+# reread <- read.table(file = "./output/summary.csv", sep = ",", header = TRUE)
