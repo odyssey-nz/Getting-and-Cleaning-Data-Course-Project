@@ -3,17 +3,17 @@
 
 ## Overview
 
-### Description of Human Activity Recognition Using Smartphones Dataset ^[1]^
+### Description of Human Activity Recognition Using Smartphones Dataset
 
 The purpose of this project is to import and prepare the data contained in the Human Activity Recognition Using Smartphones Dataset for analysis in R.
 
 This dataset contains data collected from the sensor signals (accelerometer and gyroscope) from the Samsung Galaxy S II smartphone.
 
-The experiments have been carried out with a group of 30 volunteers.  Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  For further information please see: './data/UCI HAR Dataset/README.txt'
+The experiments have been carried out with a group of 30 volunteers.  Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  For further information please see: './raw data/README.txt'
 
 ### Features of HAR Dataset
 
-The features selected for this database were generated from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.  For a description of how the signals were processed please see: './data/UCI HAR Dataset/features_info.txt'
+The features selected for this database were generated from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.  For a description of how the signals were processed please see: 'features_info.txt'
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
@@ -41,7 +41,7 @@ For the purpose of this project, we are only interested in the mean value [mean(
 
 ## Data Processing Steps
 
-The below data processing steps are a written explanation for the code contained in the './code/run_analysis.R' script, described in order of execution.  For further details please see the comments contained in the script.
+The below data processing steps are a written explanation for the code contained in the 'run_analysis.R' script, described in order of execution.  For further details please see the comments contained in the script.
 
 ### 1. Obtaining Raw Dataset
 
@@ -77,7 +77,7 @@ Test Dataset
 
 ### 2. Importing the Raw Data Files
 
-The './code/run_analysis.R' script contains the R code used to import and process the raw data files.
+The 'run_analysis.R' script contains the R code used to import and process the raw data files.
 
 First, the 'activity_labels.txt' and 'features.txt' files are read into R using read.table().  The features data is modified to include an identifying variable that will later be used to merge the feature descriptions to the training and test datasets.
 
@@ -113,7 +113,7 @@ The summarised data is output to: './output/summary.csv'
 
 These data can be read back into R using the following code:
 
-        reread <- read.table(file = "./output/summary.csv", sep = ",", header = TRUE)
+        reread <- read.table("./output/summary.txt", header = TRUE)
 
 A code book for the output data is included as 'CodeBook.md'
 

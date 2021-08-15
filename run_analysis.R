@@ -6,7 +6,7 @@ library(dplyr)
 
 ## 0. Import 'features' (Column Labels) and 'activity_labels'
 
-features <- read.table("./data/UCI HAR Dataset/features.txt")
+features <- read.table("features.txt")
 
 # Prepare features data frame to merge with 'Training' and 'Test' Data
 # Create "V[x]" variable to merge on and rename columns
@@ -15,21 +15,21 @@ features <-     features %>%
                 rename(variableName = V2) %>%
                 select(variable, variableName)
 
-activity_labels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
+activity_labels <- read.table("activity_labels.txt")
 
 
 ## 1A. Import 'Training' Data
 
 # Read in subject data
-subject_train <- read.table("./data/UCI HAR Dataset/train/subject_train.txt")
+subject_train <- read.table("./train/subject_train.txt")
 # Each row identifies the subject who performed the activity for each window sample.
 # Its range is from 1 to 30.
 
 # Read in X_train data ("Training set")
-X_train <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
+X_train <- read.table("./train/X_train.txt")
 
 # Read in y_train data ("Training labels")
-y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt")
+y_train <- read.table("./train/y_train.txt")
 
 
 ## 1B. Combine and Clean "Training" Data
@@ -70,15 +70,15 @@ train_final2 <- as_tibble(train_final2)
 ## 2A. Import 'Test' Data
 
 # Read in subject data
-subject_test<- read.table("./data/UCI HAR Dataset/test/subject_test.txt")
+subject_test<- read.table("./test/subject_test.txt")
 # Each row identifies the subject who performed the activity for each window sample.
 # Its range is from 1 to 30.
 
 # Read in X_test data ("Test set")
-X_test <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
+X_test <- read.table("./test/X_test.txt")
 
 # Read in y_test data ("Test labels")
-y_test <- read.table("./data/UCI HAR Dataset/test/y_test.txt")
+y_test <- read.table("./test/y_test.txt")
 
 
 ## 2B. Combine and Clean "Test" Data
@@ -144,7 +144,7 @@ final_summary <-        final %>%
                         summarise(mean = mean(value))
 
 # 6. Output Summary Data
-write.table(final_summary, "./output/summary.csv", row.names = FALSE, sep = ",")
+write.table(final_summary, "./output/summary.txt", row.names = FALSE)
 
 # Code below can be used to read back in the output data
-# reread <- read.table(file = "./output/summary.csv", sep = ",", header = TRUE)
+# reread <- read.table("./output/summary.txt", header = TRUE)

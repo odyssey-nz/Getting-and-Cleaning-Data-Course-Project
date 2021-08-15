@@ -1,5 +1,5 @@
 # DATA DICTIONARY
-## for './output/summary.csv'
+## for './output/summary.txt'
 
 
 ### subject
