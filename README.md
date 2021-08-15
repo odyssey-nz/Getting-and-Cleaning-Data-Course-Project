@@ -49,9 +49,9 @@ The raw dataset was downloaded from the following URL:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-The ZIP file was then extracted to: './data/UCI HAR Dataset/'
+The ZIP file was then extracted to the working directory.
 
-The above folder contains the following files that were used in this analysis:
+The following files were used in this analysis:
 
 Descriptive Variable Names
         
